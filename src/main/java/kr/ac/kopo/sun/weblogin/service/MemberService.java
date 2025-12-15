@@ -34,8 +34,7 @@ public class MemberService implements UserDetailsService {
     @Transactional
     public Long signup(MemberSignupDto dto) {
         if (memberRepository.findByUsername(dto.getUsername()).isPresent()) {
-            throw new IllegalState
-            Exception("이미 존재하는 아이디입니다. 다른 아이디를 입력해주세요.");
+            throw new IllegalStateException("이미 존재하는 아이디입니다. 다른 아이디를 입력해주세요.");
         }
 
         String encodedPassword = passwordEncoder.encode(dto.getPassword());
