@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Login.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+    <style>
+        .login-btn {
+            background-color: #5d476a;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <img src="/Figma_Panda/fubao_main.jpg" alt="Logo" class="logo">
+
+    <div th:if="${errorMessage}" style="color: red; text-align: center; margin-bottom: 10px;">
+        <p th:text="${errorMessage}"></p>
+    </div>
+
+    <form class="login-form" action="/signup" method="post">
+        <h2 style="color: #233d13; margin-bottom: 20px;">SIGN UP</h2>
+
+        <div class="input-group">
+            <span class="icon">&#128100;</span>
+            <input type="text" placeholder="NEW USERNAME" name="username" required>
+        </div>
+        <div class="input-group">
+            <span class="icon">&#128274;</span>
+            <input type="password" placeholder="NEW PASSWORD" name="password" required>
+        </div>
+
+        <button class="login-btn" type="submit">REGISTER</button>
+
+        <div style="margin-top: 15px;">
+            <a href="/login" style="text-decoration: none; color: #233d13; font-weight: 600;">Back to Login</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
